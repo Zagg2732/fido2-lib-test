@@ -42837,7 +42837,7 @@ async function validateOrigin() {
     let clientDataOrigin = this.clientData.get("origin");
     let origin = mod2.checkOrigin(clientDataOrigin);
     if (origin !== expectedOrigin) {
-        throw new Error("clientData origin did not match expected origin");
+        throw new Error(`clientData origin did not match expected origin, expectedOrigin = ${expectedOrigin}, clientDataOrigin = ${clientDataOrigin}`);
     }
     this.audit.journal.add("origin");
     return true;
